@@ -1,0 +1,22 @@
+<head>
+    <title>DB Web UI - Домашняя страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="container">
+      <h1>DB Web UI</h1>
+      <br>
+    <p class="welcome">Добро пожаловать, <strong>{{ user }}</strong></p>
+    <p class="grants">У Вас есть права на следующие операции: <strong>{{ grants }}</strong></p>
+      <form method="post">
+          <input type="submit" value="Выход из учетной записи" name="exit" style = "background-color: teal; color: white"/>
+      </form>
+      <br>
+    <p>Список таблиц:</p>
+    {% autoescape false %}
+    {{ table_list }}
+    {% endautoescape %}
+</div>
+</body>
+</html>

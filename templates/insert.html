@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вставка значений в таблицу</title>
+</head>
+<body>
+    <h1 class="welcome">Вставка в таблицу: <strong>{{ table }}</strong></h1>
+    <p>Доступна вставка из файла Excel </p>
+    <form method = "post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type = "submit" value="Загрузить">
+    </form>
+</body>
+</html>

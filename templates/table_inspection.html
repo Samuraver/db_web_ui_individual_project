@@ -1,0 +1,38 @@
+<head>
+    <title>DB Web UI - Таблица {{ table }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/styles.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="container">
+    <h1 class="welcome">Таблица: <strong>{{ table }}</strong></h1>
+        <form method="post">
+          <input type="submit" value="Вернуться к списку" name="return" style = "background-color: teal; color: white"/>
+        </form>
+    <br>
+        <form method="post">
+        Фильтр запроса: <input type="text" name="filter" value="{{
+          request.form.filter }}">
+          <input type="submit" value="Применить фильтр" name="filter" style = "background-color: teal; color: white"/>
+        </form>
+    <br>
+    {% autoescape false %}
+    {{ ops }}
+    {% endautoescape %}
+ <table class="table">
+     <tr class="table__header">
+         {% for header in headers %}
+         <th>{{ header }}</th>
+         {% endfor %}
+     </tr>
+     {% for row in data %}
+     <tr class="table__row">
+         {% for cell in row %}
+         <td class="table__cell">{{ cell }}</td>
+         {% endfor %}
+     </tr>
+     {% endfor %}
+ </table>
+</div>
+</body>
+</html>

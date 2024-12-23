@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение значений в таблице</title>
+</head>
+<body>
+    <h1 class="welcome">Изменение значений в таблице: <strong>{{ table }}</strong></h1>
+    <p>Введите значения, на которые следует заменить соответствующие поля. </p>
+    {% autoescape false %}
+    {{ field_forms }}
+    {% endautoescape %}
+</body>
+</html>
